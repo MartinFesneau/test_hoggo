@@ -1,0 +1,17 @@
+<li class="list-group-item list-group-item-action mt-1 d-flex justify-content-between">
+  <div class="d-flex flex-column bd-highlight">
+    <div class="d-flex justify-content-between">
+      <div class="bd-highlight"><%= link_to source.name, subject_source_path(@subject, source) %></div>
+      <div>
+            <%= link_to source_path(source),
+                      method: :delete,
+                      remote: true,
+                      :data => { :confirm => "Are you sure you want to delete the source '#{source.name}' ?" } do %>
+                        <i class="fas fa-trash"></i>
+                      <% end %>
+      </div>
+    </div>
+    <div class="bd-highlight"><%= truncate source.content, length: 150 %></div>
+    <div class="bd-highlight small"><%= link_to 'read more and rewrite', subject_source_path(@subject, source) %></div>
+  </div>
+</li>

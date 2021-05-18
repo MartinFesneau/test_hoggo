@@ -1,0 +1,16 @@
+
+
+
+function addSource(source) {
+  const sourcesCont = document.querySelector("#sources-cont");
+  sourcesCont.insertAdjacentHTML('beforeend', source);
+}
+
+<%# clear the input form  %>
+function clearInput() {
+  const inputField = document.querySelector("#source_content");
+  inputField.value = "";
+}
+
+addSource('<%= j render "sources/source", source: @source %>')
+clearInput()

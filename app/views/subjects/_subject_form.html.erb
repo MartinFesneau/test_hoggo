@@ -1,0 +1,6 @@
+<div class="form-group">
+  <%= simple_form_for(Subject.new, remote: true) do |f| %>
+    <%= f.input :name, label: "Enter a new subject", class:"form-control" %>
+    <%= f.submit class: "btn btn-primary" %>
+  <% end %>
+</div>

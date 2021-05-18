@@ -1,0 +1,9 @@
+<div>
+<%= simple_form_for([subject, source], remote: true) do |f| %>
+  <div class="form-group mb-0">
+    <%= f.input :name, label: false, placeholder: "Source title", class:"form-control" %>
+    <%= f.input :content, as: :text, label: false, placeholder: "Content"%>
+    <%= f.submit "Submit", class: "btn btn-primary mt-2" %>
+  <% end %>
+  </div>
+</div>
