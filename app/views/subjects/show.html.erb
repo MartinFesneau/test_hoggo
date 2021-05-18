@@ -1,7 +1,10 @@
 <div class="container">
   <div class="row">
     <div class="col-12 col-md-8">
-    <h1 class="mt-3 title"><%= @subject.name %></h1>
+    <%= link_to subjects_path do  %>
+      <i class="fas fa-arrow-left"></i>
+    <% end %>
+    <h1 class="mt-3 titleg"><%= @subject.name %></h1>
     <p>Click on a source to view it and rewrite it</p>
     <ul class="list-group mt-3" id="sources-cont">
       <% @subject.sources.each do |source| %>

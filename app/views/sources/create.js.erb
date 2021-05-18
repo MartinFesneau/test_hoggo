@@ -7,6 +7,9 @@ function addSource(source) {
 function clearInput() {
   const inputField = document.querySelector("#source_content");
   inputField.value = "";
+
+  const titleField = document.querySelector("#source_name")
+  titleField.value = "";
 }
 
 addSource('<%= j render "sources/source", source: @source %>')

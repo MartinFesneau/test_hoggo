@@ -1,4 +1,7 @@
 <div class="container">
+<%= link_to subject_path(@source.subject_id) do  %>
+  <i class="fas fa-arrow-left"></i>
+  <% end %>
   <div class="card mt-3">
     <div class="card-body">
       <h5 class="card-title title"><%= @source.name %></h5>
