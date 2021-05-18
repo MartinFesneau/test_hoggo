@@ -5,7 +5,7 @@ Rails.application.routes.draw do
     resources :sources, only: [:create, :show]
   end
 
-  resources :sources, only: [ :destroy ]
+  resources :sources, only: [:destroy]
 
 
 end

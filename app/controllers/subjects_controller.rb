@@ -14,7 +14,7 @@ class SubjectsController < ApplicationController
       redirect_to subjects_path
     else
       respond_to do |format|
-      format.json { render json: @subject.errors, status: :unprocessable_entity }
+      format.json { render :new}
       format.js
       end
     end

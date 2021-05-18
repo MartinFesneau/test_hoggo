@@ -5,11 +5,12 @@ class SourcesController < ApplicationController
   end
 
   def create
-    @source = Source.new(source_params)
+    @source = Source.create(source_params)
     @source.subject = Subject.find(params[:subject_id])
+    @subject = Subject.find(params[:subject_id])
     if @source.save
       respond_to do |format|
-        format.html { redirect_to subject_path(@source.subject_id) }
+        format.html { redirect_to subject_path(@subject) }
         format.js
       end
     else

@@ -1,0 +1,13 @@
+function addSubject(source) {
+  const subjectsCont = document.querySelector("#subjects-cont");
+  subjectsCont.insertAdjacentHTML('beforeend', source);
+}
+
+<%# clear the input form  %>
+function clearInput() {
+  const inputField = document.querySelector("#subject_content");
+  inputField.value = "";
+}
+
+addSource('<%= j render "sources/source", source: @source %>')
+clearInput()
