@@ -2,8 +2,10 @@ const rewriteSource = () => {
   const rewriteButton = document.querySelector("#rewrite-button")
   
   if (rewriteButton) {
-    const content = document.querySelector('.source-content').innerHTML
+    const content = document.querySelector('#source-content').innerHTML
     rewriteButton.addEventListener("click", () => {
+      const loading = document.querySelector(".spinner-border")
+      loading.classList.remove("d-none")
       const data = JSON.stringify({
         "language": "fr",
         "strength": 3,
@@ -18,12 +20,15 @@ const rewriteSource = () => {
           const data = JSON.parse(this.responseText);
           
           const rewriteCon = document.querySelector(".rewrite-container")
-          // avoid multiple click on button
+          // avoid multiple click on button          
           if ( rewriteCon.innerText == "") {
+            loading.classList.add("d-none")
             rewriteCon.insertAdjacentHTML("afterbegin", 
             `
             <div class="card mt-3">
-              <p class="card-text">${data.rewrite}</p>
+              <div class=""card-body>
+                <p class="card-text p-2">${data.rewrite}</p>
+              </div>
             </div>
             `
             )
@@ -33,8 +38,9 @@ const rewriteSource = () => {
       
       xhr.open("POST", "https://rewriter-paraphraser-text-changer-multi-language.p.rapidapi.com/rewrite");
       xhr.setRequestHeader("content-type", "application/json");
-      xhr.setRequestHeader("x-rapidapi-key", "23ee61465amshed758ac58ac04c4p198dd6jsneddfe2c93df8");
+      xhr.setRequestHeader("x-rapidapi-key", "b85e667118mshf3b9b622018d8dcp1086ecjsn10b63a79e853");
       xhr.setRequestHeader("x-rapidapi-host", "rewriter-paraphraser-text-changer-multi-language.p.rapidapi.com");
+
       xhr.send(data);
     
     })

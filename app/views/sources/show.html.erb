@@ -5,13 +5,16 @@
   <div class="card mt-3">
     <div class="card-body">
       <h5 class="card-title title"><%= @source.name %></h5>
-      <p class="card-text"><%= @source.content %></p>
+      <p class="card-text" id="source-content"><%= @source.content %></p>
     
     
     </div>
   </div>
   
   <button class="btn btn-primary mt-3" id="rewrite-button">Rewrite this source</button>
+  <div class="spinner-border d-none" role="status">
+    <span class="visually-hidden"></span>
+  </div>
   
   <div class="rewrite-container">
     
