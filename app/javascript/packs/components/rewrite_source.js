@@ -1,4 +1,7 @@
+require('dotenv').config()
+
 const rewriteSource = () => {
+  const key = process.env.API_KEY
   const rewriteButton = document.querySelector("#rewrite-button")
   
   if (rewriteButton) {
@@ -38,7 +41,7 @@ const rewriteSource = () => {
       
       xhr.open("POST", "https://rewriter-paraphraser-text-changer-multi-language.p.rapidapi.com/rewrite");
       xhr.setRequestHeader("content-type", "application/json");
-      xhr.setRequestHeader("x-rapidapi-key", "b85e667118mshf3b9b622018d8dcp1086ecjsn10b63a79e853");
+      xhr.setRequestHeader("x-rapidapi-key", key);
       xhr.setRequestHeader("x-rapidapi-host", "rewriter-paraphraser-text-changer-multi-language.p.rapidapi.com");
 
       xhr.send(data);
